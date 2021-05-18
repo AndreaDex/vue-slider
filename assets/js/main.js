@@ -17,6 +17,7 @@ const app = new Vue({
       "./assets/img/the_bridges_of_amsterdam.jpg",
       "./assets/img/we_still_have_around.jpg",
     ],
+    isSelected: false,
   },
   methods: {
     prev() {
@@ -32,7 +33,9 @@ const app = new Vue({
       return this.counter++;
     },
     circleSelector(i) {
-      return (this.counter = i);
+      this.counter = i;
+      this.isSelected = !this.isSelected;
     },
   },
+  mo,
 });
