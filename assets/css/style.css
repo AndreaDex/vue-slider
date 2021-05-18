@@ -1,0 +1,42 @@
+/* Common */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 650px;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Main Style */
+#app {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  font-size: 40px;
+  padding: 20px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.selector {
+  padding: 10px;
+  border-radius: 500px;
+  background-color: rgba(0, 0, 0, 0.63);
+  color: white;
+}
+
+.selector i:hover {
+  color: turquoise;
+}
