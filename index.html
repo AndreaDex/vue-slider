@@ -23,13 +23,8 @@
         <div class="galleria">
             <img :src="gallery[counter]" alt="">
             <div class="selector">
-                <i class="fas fa-circle" @click="circleSelector(0)"
-                ></i>
-                <i class="fas fa-circle" @click="circleSelector(1)"></i>
-                <i class="fas fa-circle" @click="circleSelector(2)"
-                :class="{selected: isSelected}"></i>
-                <i class="fas fa-circle" @click="circleSelector(3)"></i>
-                <i class="fas fa-circle" @click="circleSelector(4)"></i>
+                <i class="fas fa-circle" v-for="(item,index) in gallery" @click="circleSelector(index)" :class="(index == counter) ? 'selected' : '' "></i>
+                
             </div>
         </div>
 

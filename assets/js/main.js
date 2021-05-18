@@ -17,7 +17,6 @@ const app = new Vue({
       "./assets/img/the_bridges_of_amsterdam.jpg",
       "./assets/img/we_still_have_around.jpg",
     ],
-    isSelected: false,
   },
   methods: {
     prev() {
@@ -32,10 +31,25 @@ const app = new Vue({
       }
       return this.counter++;
     },
-    circleSelector(i) {
-      this.counter = i;
-      this.isSelected = !this.isSelected;
+    circleSelector(index) {
+      this.counter = index;
     },
   },
-  mo,
+  mounted() {
+    console.log("ciao");
+    window.addEventListener("keydown", (e) => {
+      console.log(e.key);
+      if (e.key === "ArrowRight") {
+        if (this.counter >= this.gallery.length - 1) {
+          return (this.counter = 0);
+        }
+        return this.counter++;
+      } else if (e.key === "ArrowLeft") {
+        if (this.counter <= 0) {
+          return (this.counter = this.gallery.length - 1);
+        }
+        return this.counter--;
+      }
+    });
+  },
 });
