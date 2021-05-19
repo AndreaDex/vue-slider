@@ -22,9 +22,9 @@
 
         <div class="galleria">
             <img :src="gallery[counter]" alt="">
+            
             <div class="selector">
-                <i class="fas fa-circle" v-for="(item,index) in gallery" @click="circleSelector(index)" :class="(index == counter) ? 'selected' : '' "></i>
-                
+                <i class="fas fa-circle" v-for="(item,index) in gallery" @click="circleSelector(index)" :class="(index == counter) ? 'selected' : '' "></i>   
             </div>
         </div>
 
